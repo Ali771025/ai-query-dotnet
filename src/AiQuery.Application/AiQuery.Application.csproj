@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../AiQuery.Domain/AiQuery.Domain.csproj" />
+    <ProjectReference Include="../AiQuery.Contracts/AiQuery.Contracts.csproj" />
+  </ItemGroup>
+</Project>

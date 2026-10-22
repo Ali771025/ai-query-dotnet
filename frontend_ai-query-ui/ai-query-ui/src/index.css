@@ -1,0 +1,427 @@
+@import "@fontsource/vazirmatn/400.css";
+@import "@fontsource/vazirmatn/500.css";
+@import "@fontsource/vazirmatn/600.css";
+@import "@fontsource/vazirmatn/700.css";
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Light: soft neutrals | Dark: Snow-inspired (snow-tail) — charcoal + soft lavender, no sharp blues */
+:root {
+  --surface: #f7f9fb;
+  --panel: #ffffff;
+  --panel-solid: #ffffff;
+  --ink: #1c1c1c;
+  --heading: #1c1c1c;
+  --muted: #6b7280;
+  --border: rgba(28, 28, 28, 0.1);
+  --primary: #5b5fc7;
+  --primary-fg: #ffffff;
+  --primary-soft: rgba(198, 199, 248, 0.35);
+  --accent: #5b5fc7;
+  --link: #5b5fc7;
+  --danger: #e57373;
+  --input-bg: #ffffff;
+  --shadow: 0 4px 20px rgba(28, 28, 28, 0.06);
+  --sidebar: #ffffff;
+  --body-glow: none;
+}
+
+.dark {
+  /* Snow dark: bg #1C1C1C, overlays white/5–10%, accent #C6C7F8 */
+  --surface: #1c1c1c;
+  --panel: rgba(255, 255, 255, 0.05);
+  --panel-solid: #252525;
+  --ink: rgba(255, 255, 255, 0.85);
+  --heading: rgba(255, 255, 255, 0.95);
+  --muted: rgba(255, 255, 255, 0.4);
+  --border: rgba(255, 255, 255, 0.1);
+  --primary: #c6c7f8;
+  --primary-fg: #1c1c1c;
+  --primary-soft: rgba(255, 255, 255, 0.08);
+  --accent: #c6c7f8;
+  --link: #c6c7f8;
+  --danger: #e57373;
+  --input-bg: #252525;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --sidebar: #1c1c1c;
+  --body-glow: none;
+}
+
+@theme {
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-panel-solid: var(--panel-solid);
+  --color-ink: var(--ink);
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-primary-soft: var(--primary-soft);
+  --color-accent: var(--accent);
+  --color-link: var(--link);
+  --color-danger: var(--danger);
+  --color-input: var(--input-bg);
+  --color-sidebar: var(--sidebar);
+
+  --color-primary-50: var(--primary-soft);
+  --color-primary-100: var(--primary-soft);
+  --color-primary-500: var(--primary);
+  --color-primary-600: var(--primary);
+  --color-primary-700: var(--primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--surface);
+  background-image: var(--body-glow);
+  background-attachment: fixed;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbars — thin, theme-aware (Firefox + Chromium/WebKit) */
+:root {
+  --scrollbar-size: 8px;
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(28, 28, 28, 0.18);
+  --scrollbar-thumb-hover: rgba(91, 95, 199, 0.45);
+}
+
+.dark {
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.14);
+  --scrollbar-thumb-hover: rgba(198, 199, 248, 0.4);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* react-select theme overrides — keep default layout, only colors */
+.rs-root .rs__control {
+  min-height: 40px !important;
+  border-radius: 8px !important;
+  border-color: var(--border) !important;
+  background-color: var(--input-bg) !important;
+  box-shadow: none !important;
+}
+
+.rs-root.rs-root--error .rs__control {
+  border-color: var(--danger) !important;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--danger) 25%, transparent) !important;
+}
+
+.rs-root.rs-root--error .rs__control--is-focused {
+  border-color: var(--danger) !important;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--danger) 25%, transparent) !important;
+}
+
+.rs-root .rs__control--is-focused {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px var(--primary-soft) !important;
+}
+
+.rs-root .rs__single-value,
+.rs-root .rs__input-container,
+.rs-root .rs__input {
+  color: var(--ink) !important;
+}
+
+.rs-root .rs__placeholder {
+  color: var(--muted) !important;
+}
+
+.rs-root .rs__indicator {
+  color: var(--muted) !important;
+}
+
+.rs-root .rs__indicator-separator {
+  display: none !important;
+}
+
+.rs-root .rs__menu {
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  background-color: var(--panel-solid) !important;
+  box-shadow: var(--shadow) !important;
+  overflow: hidden !important;
+}
+
+.rs-root .rs__menu-list {
+  background-color: var(--panel-solid) !important;
+  padding: 4px !important;
+}
+
+.rs-root .rs__option {
+  border-radius: 6px !important;
+  color: var(--ink) !important;
+  background-color: transparent !important;
+  cursor: pointer !important;
+}
+
+.rs-root .rs__option--is-focused,
+.rs-root .rs__option--is-selected {
+  background-color: var(--primary-soft) !important;
+}
+
+.rs-root .rs__option--is-selected {
+  color: var(--accent) !important;
+  font-weight: 500 !important;
+}
+
+.rs-root .rs__multi-value {
+  background-color: var(--primary-soft) !important;
+  border-radius: 6px !important;
+}
+
+.rs-root .rs__multi-value__label {
+  color: var(--accent) !important;
+}
+
+.rs-root .rs__multi-value__remove {
+  color: var(--accent) !important;
+}
+
+.rs-root .rs__multi-value__remove:hover {
+  background-color: var(--panel-solid) !important;
+  color: var(--danger) !important;
+}
+
+.rs-root .rs__menu-notice--no-options {
+  color: var(--muted) !important;
+}
+
+/* portal menu (rendered on body) */
+.rs__menu-portal .rs__menu {
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  background-color: var(--panel-solid) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.rs__menu-portal .rs__menu-list {
+  background-color: var(--panel-solid) !important;
+}
+
+.rs__menu-portal .rs__option {
+  color: var(--ink) !important;
+  background-color: transparent !important;
+  border-radius: 6px !important;
+}
+
+.rs__menu-portal .rs__option--is-focused,
+.rs__menu-portal .rs__option--is-selected {
+  background-color: var(--primary-soft) !important;
+}
+
+.rs__menu-portal .rs__option--is-selected {
+  color: var(--accent) !important;
+}
+
+/* react-multi-date-picker (Jalali) — match Input / theme tokens */
+.rmdp-field .rmdp-container {
+  width: 100%;
+  display: block;
+}
+
+/* Library default .rmdp-input is ~21–22px; force Input parity (h-10) */
+.rmdp-field .rmdp-input,
+input.rmdp-input {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 2.5rem !important; /* h-10 */
+  min-height: 2.5rem !important;
+  margin: 0 !important;
+  padding: 0 0.75rem !important; /* px-3 */
+  border: 1px solid var(--border) !important;
+  border-radius: 0.5rem !important; /* rounded-lg */
+  background-color: var(--input-bg) !important;
+  color: var(--ink) !important;
+  font-family: inherit !important;
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+  outline: none !important;
+  direction: rtl;
+  transition:
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.rmdp-field .rmdp-input::placeholder,
+input.rmdp-input::placeholder {
+  color: var(--muted) !important;
+}
+
+.rmdp-field .rmdp-input:focus,
+input.rmdp-input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px var(--primary-soft) !important;
+}
+
+.rmdp-field .rmdp-input.rmdp-input--error,
+input.rmdp-input.rmdp-input--error {
+  border-color: var(--danger) !important;
+}
+
+.rmdp-field .rmdp-input.rmdp-input--error:focus,
+input.rmdp-input.rmdp-input--error:focus {
+  border-color: var(--danger) !important;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--danger) 25%, transparent) !important;
+}
+
+.rmdp-field .rmdp-input:disabled,
+input.rmdp-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Calendar popup — solid panel + ink on ALL surfaces (day/month/year).
+   Library injects .rmdp-month-picker/.rmdp-year-picker { background:#fff } and
+   .rmdp-wrapper { background:#fff } — force theme tokens. */
+.rmdp-wrapper,
+.rmdp-calendar,
+.rmdp-day-picker,
+.rmdp-month-picker,
+.rmdp-year-picker,
+.rmdp-wrapper .rmdp-calendar,
+.rmdp-wrapper .rmdp-day-picker,
+.rmdp-wrapper .rmdp-month-picker,
+.rmdp-wrapper .rmdp-year-picker,
+.rmdp-calendar .rmdp-day-picker,
+.rmdp-calendar .rmdp-month-picker,
+.rmdp-calendar .rmdp-year-picker {
+  background: var(--panel-solid) !important;
+  background-color: var(--panel-solid) !important;
+  color: var(--ink) !important;
+}
+
+.rmdp-wrapper,
+.rmdp-calendar {
+  box-shadow: var(--shadow) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  font-family: inherit !important;
+  z-index: 80;
+}
+
+.rmdp-calendar .rmdp-header,
+.rmdp-calendar .rmdp-header-values,
+.rmdp-calendar .rmdp-arrow-container,
+.rmdp-calendar .rmdp-week-day,
+.rmdp-calendar .rmdp-day,
+.rmdp-calendar .rmdp-day span,
+.rmdp-header,
+.rmdp-header-values,
+.rmdp-header-values span,
+.rmdp-arrow-container,
+.rmdp-week-day,
+.rmdp-day,
+.rmdp-day span,
+.rmdp-ym .rmdp-day span,
+.rmdp-month-picker .rmdp-day,
+.rmdp-month-picker .rmdp-day span,
+.rmdp-year-picker .rmdp-day,
+.rmdp-year-picker .rmdp-day span {
+  color: var(--ink) !important;
+}
+
+.rmdp-week-day {
+  color: var(--muted) !important;
+}
+
+.rmdp-day.rmdp-deactive,
+.rmdp-day.rmdp-deactive span,
+.rmdp-day.rmdp-disabled,
+.rmdp-day.rmdp-disabled span {
+  color: var(--muted) !important;
+  opacity: 0.55;
+}
+
+.rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span,
+.rmdp-ym .rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span {
+  background-color: transparent !important;
+  color: var(--ink) !important;
+}
+
+.rmdp-day.rmdp-today span {
+  background-color: var(--primary-soft) !important;
+  color: var(--accent) !important;
+}
+
+.rmdp-day.rmdp-selected span:not(.highlight),
+.rmdp-month-picker .rmdp-day.rmdp-selected span:not(.highlight),
+.rmdp-year-picker .rmdp-day.rmdp-selected span:not(.highlight),
+.rmdp-ym .rmdp-day.rmdp-selected span:not(.highlight) {
+  background-color: var(--primary) !important;
+  color: var(--primary-fg) !important;
+  box-shadow: none !important;
+  opacity: 1;
+}
+
+.rmdp-day:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover,
+.rmdp-month-picker .rmdp-day:not(.rmdp-disabled) span:hover,
+.rmdp-year-picker .rmdp-day:not(.rmdp-disabled) span:hover,
+.rmdp-ym .rmdp-day:not(.rmdp-disabled) span:hover {
+  background-color: var(--primary-soft) !important;
+  color: var(--accent) !important;
+}
+
+.rmdp-arrow {
+  border-color: var(--ink) !important;
+}
+
+.rmdp-arrow-container:hover {
+  background-color: var(--primary-soft) !important;
+  box-shadow: none !important;
+}
+
+.rmdp-ep-arrow:after {
+  background-color: var(--panel-solid) !important;
+  border-color: var(--border) !important;
+}
+

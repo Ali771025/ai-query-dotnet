@@ -1,0 +1,20 @@
+namespace AiQuery.Domain.Common;
+
+public readonly record struct TenantId(Guid Value);
+public readonly record struct OrganizationId(Guid Value);
+public readonly record struct UserId(Guid Value);
+public readonly record struct MembershipId(Guid Value);
+public readonly record struct RoleId(Guid Value);
+public readonly record struct SessionId(Guid Value);
+public readonly record struct SoftwareProductId(Guid Value);
+public readonly record struct SoftwareVersionId(Guid Value);
+public readonly record struct SoftwareDatabaseId(Guid Value);
+public readonly record struct KnowledgeSnapshotId(Guid Value);
+public readonly record struct FileIdentityId(Guid Value);
+public readonly record struct FileRevisionId(Guid Value);
+public readonly record struct ApiKeyId(Guid Value);
+public readonly record struct WalletId(Guid Value);
+public readonly record struct QueryRequestId(Guid Value);
+public readonly record struct QueryAttemptId(Guid Value);
+public readonly record struct QueryResultId(Guid Value);
+public readonly record struct FeedbackId(Guid Value);

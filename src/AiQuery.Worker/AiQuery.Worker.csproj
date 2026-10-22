@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+  <ItemGroup>
+    <ProjectReference Include="../AiQuery.Application/AiQuery.Application.csproj" />
+    <ProjectReference Include="../AiQuery.Infrastructure/AiQuery.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

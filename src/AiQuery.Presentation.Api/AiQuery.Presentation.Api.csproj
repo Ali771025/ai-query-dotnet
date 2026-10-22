@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <ItemGroup>
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <ProjectReference Include="../AiQuery.Application/AiQuery.Application.csproj" />
+    <ProjectReference Include="../AiQuery.Contracts/AiQuery.Contracts.csproj" />
+    <ProjectReference Include="../AiQuery.Infrastructure/AiQuery.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

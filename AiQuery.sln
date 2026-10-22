@@ -1,0 +1,49 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiQuery.Domain", "src/AiQuery.Domain/AiQuery.Domain.csproj", "{7E6B9C01-3DBB-4D10-B190-100000000001}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiQuery.Contracts", "src/AiQuery.Contracts/AiQuery.Contracts.csproj", "{7E6B9C01-3DBB-4D10-B190-100000000002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiQuery.Application", "src/AiQuery.Application/AiQuery.Application.csproj", "{7E6B9C01-3DBB-4D10-B190-100000000003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiQuery.Infrastructure", "src/AiQuery.Infrastructure/AiQuery.Infrastructure.csproj", "{7E6B9C01-3DBB-4D10-B190-100000000004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiQuery.Presentation.Api", "src/AiQuery.Presentation.Api/AiQuery.Presentation.Api.csproj", "{7E6B9C01-3DBB-4D10-B190-100000000005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AiQuery.Worker", "src/AiQuery.Worker/AiQuery.Worker.csproj", "{7E6B9C01-3DBB-4D10-B190-100000000006}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E6B9C01-3DBB-4D10-B190-100000000001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E6B9C01-3DBB-4D10-B190-100000000006}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
