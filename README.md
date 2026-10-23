@@ -1,5 +1,10 @@
 # AI Query · .NET
 
+<!-- project-contact:start -->
+**Work with Yosof Omrani:** [Email a project inquiry](mailto:aliomrani916@gmail.com) · **aliomrani916@gmail.com** · [Services & contact](https://ali771025.github.io/software-portfolio/en/contact/) · [Portfolio walkthrough](https://ali771025.github.io/software-portfolio/en/work/ai-query-dotnet/)
+<!-- project-contact:end -->
+
+
 ![Project overview](docs/assets/overview.svg)
 
 A layered .NET 8 reporting backend with an accompanying React query workspace.
